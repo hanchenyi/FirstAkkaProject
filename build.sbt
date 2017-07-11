@@ -17,3 +17,6 @@ lazy val root = (project in file("."))
   .settings(
     commonSettings
   )
+
+
+fork in run := true
