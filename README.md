@@ -1,4 +1,4 @@
 # FirstAkkaProject
 
 # run tests
-# sbt "test:testOnly *AkkademyDbSpec"
+- sbt "test:testOnly *AkkademyDbSpec"
