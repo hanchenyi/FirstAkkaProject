@@ -1,6 +1,6 @@
 package com.example
 
-import akka.actor.Actor
+import akka.actor.{Actor, Status}
 import akka.event.Logging
 
 import scala.collection.mutable.HashMap
@@ -21,4 +21,11 @@ class AkkademyDb extends Actor{
     case others => log.info(s"received unknown messages: {$others}")
   }
 
+}
+
+class ScalaPongActor extends Actor{
+  override def receive: Receive = {
+    case "ping" => sender() ! "pong"
+    case _ => sender() ! Status.Failure(new Exception("unknow message"))
+  }
 }
